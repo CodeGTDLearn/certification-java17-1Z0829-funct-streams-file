@@ -9,41 +9,41 @@ public class FilesAndStreams {
 
     // STREAM-LIST: Use try/resources||try/catch directory closed
     Path src = Paths.get("src");
-//    try (Stream<Path> str = Files.list(src)) {
-//      str
-//           .limit(5)
-//           .forEach(System.out::println);
-//    }
-//    catch (IOException io) {
-//      System.out.println("Problem: " + io);
-//    }
-//    //------------------------------------------------------------------------------
-//    // STREAM-WALK: Use try/resources||try/catch directory closed
-//    Path out = Paths.get("testA");
-//    try (Stream<Path> str = Files.walk(out)) {
-//      str.limit(8)
-//         .forEach(System.out::println);
-//    }
-//    catch (IOException io) {
-//      System.out.println("Problem: " + io);
-//    }
-//    //------------------------------------------------------------------------------
-//    try (Stream<Path> str = Files.walk(out, 1)) {
-//      str.limit(8)
-//         .forEach(System.out::println);
-//    }
-//    catch (IOException io) {
-//      System.out.println("Problem: " + io);
-//    }
-//    //------------------------------------------------------------------------------
-//    try (Stream<Path> str = Files.walk(out)) {
-//      str.filter(file -> Files.isRegularFile(file))
-//         .limit(8)
-//         .forEach(System.out::println);
-//    }
-//    catch (IOException io) {
-//      System.out.println("Problem: " + io);
-//    }
+    try (Stream<Path> str = Files.list(src)) {
+      str
+           .limit(5)
+           .forEach(System.out::println);
+    }
+    catch (IOException io) {
+      System.out.println("Problem: " + io);
+    }
+    //------------------------------------------------------------------------------
+    // STREAM-WALK: Use try/resources||try/catch directory closed
+    Path out = Paths.get("testA");
+    try (Stream<Path> str = Files.walk(out)) {
+      str.limit(8)
+         .forEach(System.out::println);
+    }
+    catch (IOException io) {
+      System.out.println("Problem: " + io);
+    }
+    //------------------------------------------------------------------------------
+    try (Stream<Path> str = Files.walk(out, 1)) {
+      str.limit(8)
+         .forEach(System.out::println);
+    }
+    catch (IOException io) {
+      System.out.println("Problem: " + io);
+    }
+    //------------------------------------------------------------------------------
+    try (Stream<Path> str = Files.walk(out)) {
+      str.filter(file -> Files.isRegularFile(file))
+         .limit(8)
+         .forEach(System.out::println);
+    }
+    catch (IOException io) {
+      System.out.println("Problem: " + io);
+    }
     //------------------------------------------------------------------------------
 
     // Use try/resources||try/catch directory closed
